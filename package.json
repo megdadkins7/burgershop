@@ -1,0 +1,42 @@
+{
+  "name": "burgershop",
+  "version": "0.1.0",
+  "private": true,
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "date-fns": "^2.13.0",
+    "json-server": "^0.16.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "prettier": "2.0.5"
+  },
+  "proxy": "http://localhost:3001/api",
+  "scripts": {
+    "start": "concurrently --kill-others -n API,DEV -c yellow,green \"npm run start:api\" \"npm run start:site\"",
+    "start:site": "react-scripts start",
+    "start:api": "json-server -d 500 -p 3001 config/api.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  }
+}
